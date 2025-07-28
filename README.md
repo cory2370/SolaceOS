@@ -13,6 +13,7 @@ SolaceOS is EOU and beginner's friendliness focused while CachyOS is speed focus
     - On a proper note this may not seem viable because my lack of skills on OpenRC and systemd to be configured on Arch
 - 2nd next big idea: Proper documentation
 - 3rd next big idea: Lightweight and speed is our 2nd top priority
+- 4th next big idea: Use cachyos kernel
 
 [Join and contribute to the chaos! :DDDD](https://discord.gg/DqtHZRgpmh)
 
