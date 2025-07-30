@@ -9,7 +9,7 @@ cp -r airootfs/ /etc/artools/profiles/solaceos/airootfs/
 cp packages.x86_64 /etc/artools/profiles/solaceos/
 cp profiledef.sh /etc/artools/profiles/solaceos/
 cp -r calamares/ /etc/artools/profiles/solaceos/airootfs/etc/calamares
-buildiso -p solaceos
+sudo buildiso -p solaceos
 
 #its pronounced "solace-sos" btw not "solace oh es"
 
