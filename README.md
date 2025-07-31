@@ -1,20 +1,45 @@
-# The SolaceOS Project
+# SolaceOS 🚀
 
-The vision of my distro is an ease-of-use focused distro based on Arch/Artix that can be used out of the box, with pre-configured security measures (ClamAV, AppArmor, hardened kernel...)
-Oh wait let me make a comparison with 2 distros that inspired me
+**“Linux that Just Works. No Tweaking. No Headaches.”**
 
-How is SolaceOS different from Artix?
-SolaceOS is beginner's friendly, easy to use and works straight out of the box. Artix is a clean distro so you still kind have to configure the basics like your DE/WM (if installing base), and firewall
+SolaceOS is an Artix-based project (soon to be full distro!!!) built around one core belief: **desktop Linux should be for everyone to easily use**. We bundle top-tier security, killer performance, and a slick install experience—so you can focus on your workflow, not wrestling with configs.
 
-How is SolaceOS different from CachyOS?
-SolaceOS is EOU and beginner's friendliness focused while CachyOS is speed focused. CachyOS uses systemd and SolaceOS doesn't!!
+---
 
-- Next big idea: Use Arch instead of Artix and manually configure OpenRC on it
-    - On a proper note this may not seem viable because my lack of skills on OpenRC and systemd to be configured on Arch
-- 2nd next big idea: Proper documentation
-- 3rd next big idea: Lightweight and speed is our 2nd top priority
-- 4th next big idea: Use cachyos kernel
+## 🎯 Vision & Philosophy
 
-[Join and contribute to the chaos! :DDDD](https://discord.gg/DqtHZRgpmh)
+- **Ease-of-Use First**  
+  Zero post-install tweaking. Plug-and-play defaults let you install, reboot, and go.
 
+- **Security by Default**  
+  Hardened kernel, AppArmor, UFW, Firejail & ClamAV pre-wired. No surprises.
 
+- **Lightweight & Snappy**  
+  Btrfs snapshots, minimal daemons, and efficient resource use—runs on 1 GB RAM & 8 GB disk.
+
+- **Beginner-Friendly**  
+  Calamares installer with auto-Btrfs/LUKS layout, GUI package manager & hardware prober.
+
+---
+
+## 🌟 Core Features
+
+| Category           | Highlights                                                                 |
+|--------------------|----------------------------------------------------------------------------|
+| **Filesystem**     | Btrfs with auto-subvolumes & rollback via Snapper/Timeshift               |
+| **Installer**      | Calamares (full branding, auto-encrypt, guided partitions)                 |
+| **Kernel & Security** | `linux-hardened`, AppArmor, UFW+GUFW, Firejail profiles, ClamAV           |
+| **Apps & Tools**   | Pamac-GTK, Flatpak/Flathub support, Firefox (or Brave/LibreWolf), Konsole   |
+| **Power & Perf**   | TLP, PowerTOP, CPUfreq selector, `hw-probe` diagnostics                     |
+| **Branding & UX**  | SolaceOS themes (GTK/QT), KDE by default, pre-configured for your ease-of-use        |
+
+---
+
+## 🤝 Contribute to SolaceOS
+- [Join our discord server!](https://discord.gg/DqtHZRgpmh)
+    - Directly discuss topics related to SolaceOS with us!
+    - Talk to fellow community members
+    - Post suggestions and report inconsistencies!
+- Fork & branch
+    - Code & commit (`git commit -m "feat: add awesome feature"`)
+    - Push & open PR — we’ll review, discuss & merge!
