@@ -17,7 +17,7 @@ SolaceOS is an Artix-based project (soon to be full distro!!!) built around one 
   Hardened kernel, AppArmor, UFW, Firejail & ClamAV pre-wired. No surprises.
 
 - **Lightweight & Snappy**  
-  Btrfs snapshots, minimal daemons, and efficient resource use—runs on 1 GB RAM & 8 GB disk.
+  Btrfs snapshots, minimal daemons, and efficient resource use, can run on 1 GB RAM & 8 GB disk (tested on a Virtual Machine).
 
 - **Beginner-Friendly**  
   Calamares installer with auto-Btrfs/LUKS layout, GUI package manager & hardware prober.
