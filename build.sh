@@ -1,4 +1,11 @@
 #!/usr/bin/env bash
+
+#this is here to fix a bootfs error
+mkdir -p ~/solaceos-build/runtime
+mkdir -p ~/solaceos-build/runtime
+sudo mount --bind ~/solaceos-build/runtime /var/lib/artools/buildiso
+sudo buildiso -p solaceos -w ~/solaceos-build/workdir -o ~/solaceos-build/out
+
 set -e
 
 #test comment test comment solaceos is the best linux distro
