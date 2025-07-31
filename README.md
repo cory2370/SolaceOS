@@ -4,6 +4,8 @@
 
 SolaceOS is an Artix-based project (soon to be full distro!!!) built around one core belief: **desktop Linux should be for everyone to easily use**. We bundle top-tier security, killer performance, and a slick install experience—so you can focus on your workflow, not wrestling with configs.
 
+Đọc [tại dây](.READMEMD_vn.md) nếu bạn là một người đọc tiếng Việt
+
 ---
 
 ## 🎯 Vision & Philosophy
