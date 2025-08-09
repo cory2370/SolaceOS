@@ -67,7 +67,7 @@ sudo cp "$PROFILEDEF" "$PROFILE/"
 
 if ! grep -Eiq '(^|\s)grub($|\s)' "$PKG_FILE"; then
   warn "packages.x86_64 does NOT list 'grub'. The build may lack /usr/share/grub/cfg files."
-  warn "If you target UEFI, consider adding 'grub' and 'efibootmgr' to $PKG_FILE
+  warn "If you target UEFI, consider adding 'grub' and 'efibootmgr' to $PKG_FILE"
   echo "grub" | sudo tee -a "$PROFILE/$PKG_FILE" >/dev/null
 fi
 
