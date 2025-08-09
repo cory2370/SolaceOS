@@ -71,6 +71,26 @@ if ! grep -Eiq '(^|\s)grub($|\s)' "$PKG_FILE"; then
   echo "grub" | sudo tee -a "$PROFILE/$PKG_FILE" >/dev/null
 fi
 
+PKG_LIST_PATH="$PROFILE/$PKG_FILE"
+if ! sudo grep -Eiq '(^|\s)grub($|\s)' "$PKG_LIST_PATH"; then
+  info "Adding 'grub' to package list ($PKG_LIST_PATH)"
+  echo "grub" | sudo tee -a "$PKG_LIST_PATH" >/dev/null
+fi
+if ! sudo grep -Eiq '(^|\s)efibootmgr($|\s)' "$PKG_LIST_PATH"; then
+  info "Adding 'efibootmgr' to package list ($PKG_LIST_PATH)"
+  echo "efibootmgr" | sudo tee -a "$PKG_LIST_PATH" >/dev/null
+fi
+
+GRUB_CFG_DIR="$PROFILE/airootfs/usr/share/grub/cfg"
+sudo mkdir -p "$GRUB_CFG_DIR"
+if [ -z "$(find "$GRUB_CFG_DIR" -maxdepth 1 -name '*.cfg' -print -quit 2>/dev/null)" ]; then
+  info "Creating placeholder grub cfg to avoid make_grub() failure"
+  sudo tee "$GRUB_CFG_DIR/solaceos.cfg" >/dev/null <<'EOF'
+set timeout=5
+set default=0
+EOF
+fi
+
 info "Cleaning previous buildiso state if present"
 sudo rm -rf /var/lib/artools/buildiso/solaceos || true
 rm -rf "$OUTDIR"/* || true
