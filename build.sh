@@ -76,7 +76,7 @@ sudo rm -rf /var/lib/artools/buildiso/solaceos || true
 rm -rf "$OUTDIR"/* || true
 mkdir -p "$OUTDIR"
 
-info "Running buildiso (this may take a while)..."
+info "Running buildiso"
 sudo buildiso -p solaceos -w "$WORKDIR/workdir" -o "$OUTDIR"
 
 if compgen -G "/var/cache/isos/solaceos-*.iso" >/dev/null; then
