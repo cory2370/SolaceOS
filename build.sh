@@ -71,7 +71,7 @@ if ! grep -Eiq '(^|\s)grub($|\s)' "$PKG_FILE"; then
   echo "grub" | sudo tee -a "$PROFILE/$PKG_FILE" >/dev/null
 fi
 
-info "Cleaning previous buildiso state (if present)"
+info "Cleaning previous buildiso state if present"
 sudo rm -rf /var/lib/artools/buildiso/solaceos || true
 rm -rf "$OUTDIR"/* || true
 mkdir -p "$OUTDIR"
