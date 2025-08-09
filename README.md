@@ -45,3 +45,7 @@ SolaceOS is an Artix-based project (soon to be full distro!!!) built around one 
 - Fork & branch
     - Code & commit (`git commit -m "feat: add awesome feature"`)
     - Push & open PR, I’ll review, consider & merge!
+ 
+Psst!
+If you have any concerns regarding trademarks or licensing, contact me ASAP at oalqby39@gmail.com
+
