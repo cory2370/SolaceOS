@@ -1,36 +1,31 @@
 #!/usr/bin/env bash
+#build script might work this time, brace for impact, good luck
+set -euo pipefail
 
 WORKDIR="$HOME/solaceos-build"
 RUNTIME="$WORKDIR/runtime"
 OUTDIR="$WORKDIR/out"
 PROFILE="/etc/artools/profiles/solaceos"
-AIROOTFS_SRC="airootfs"
-CALAMARES_SRC="calamares"
-PKG_FILE="packages.x86_64"
-PROFILEDEF="profiledef.sh"
 
-#this is here to fix a bootfs error
-mkdir -p ~/solaceos-build/runtime
-mkdir -p ~/solaceos-build/runtime
-sudo mount --bind ~/solaceos-build/runtime /var/lib/artools/buildiso
+mkdir -p "$RUNTIME"
+sudo mkdir -p /var/lib/artools/buildiso
+sudo mount --bind "$RUNTIME" /var/lib/artools/buildiso
+sudo rm -rf /var/lib/artools/buildiso/solaceos || true
+rm -rf "$OUTDIR" || true
+mkdir -p "$OUTDIR"
 
-set -e
+#my vm runs out of space
+sudo mkdir -p "$PROFILE/airootfs"
+sudo rm -rf "$PROFILE/airootfs"/*
+sudo mkdir -p "$PROFILE/airootfs/etc/calamares"
 
-#test comment test comment solaceos is the best linux distro
-mkdir -p /etc/artools/profiles/solaceos/airootfs
-rm -rf /etc/artools/profiles/solaceos/airootfs/*
-mkdir -p /etc/artools/profiles/solaceos/airootfs/etc/calamares
-cp -r airootfs/ /etc/artools/profiles/solaceos/airootfs/
-cp packages.x86_64 /etc/artools/profiles/solaceos/
-cp profiledef.sh /etc/artools/profiles/solaceos/
-cp -r calamares/ /etc/artools/profiles/solaceos/airootfs/etc/calamares
+sudo cp -r airootfs/. "$PROFILE/airootfs/"
+sudo cp packages.x86_64 "$PROFILE/"
+sudo cp profiledef.sh "$PROFILE/"
+sudo cp -r calamares/. "$PROFILE/airootfs/etc/calamares/"
 
-#2 buildiso commands, maybe its buildiso breaks in vm?? First buildiso is moved down here
-sudo buildiso -p solaceos -w ~/solaceos-build/workdir -o ~/solaceos-build/out
+echo "grub" >> "$PROFILE/packages.x86_64"
 
-#its pronounced "solace-sos" btw not "solace oh es"
-
-
-mkdir -p out
-mv /var/cache/isos/solaceos-*.iso out/
-echo "/$(ls out/) :DDDDDDD"
+sudo buildiso -p solaceos -w "$WORKDIR/workdir" -o "$OUTDIR"
+mv /var/cache/isos/solaceos-*.iso out/ 2>/dev/null || true
+echo "Built ISOs (if any) in: $OUTDIR"
