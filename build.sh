@@ -80,9 +80,9 @@ info "Running buildiso"
 sudo buildiso -p solaceos -w "$WORKDIR/workdir" -o "$OUTDIR"
 
 if compgen -G "/var/cache/isos/solaceos-*.iso" >/dev/null; then
-  info "Moving built ISO(s) from /var/cache/isos to $OUTDIR"
+  info "Moving built iso from /var/cache/isos to $OUTDIR"
   sudo mv /var/cache/isos/solaceos-*.iso "$OUTDIR"/ || warn "mv failed"
 fi
 
-info "Done. ISOs (if any) are in: $OUTDIR"
+info "ISO in $OUTDIR"
 ls -lh "$OUTDIR" || true
